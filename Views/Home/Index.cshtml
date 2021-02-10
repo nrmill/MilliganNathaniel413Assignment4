@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model IEnumerable<Restaurant>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+<div>
+    <table id="restaurants">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Favorite Dish</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+                <th>Website</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Restaurant r in Model)
+            {
+                @:<tr>
+                    <td>@r.Rank</td>
+                    <td>@r.Name</td>
+                    <td>@r.FavDish</td>
+                    <td>@r.Address</td>
+                    <td>@r.PhoneNum</td>
+                    <td>@r.Website</td>
+                @:</tr>
+            }
+        </tbody>
+    </table>
+</div>

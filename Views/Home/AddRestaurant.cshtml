@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Add Restaurant";
+}
+
+@model MilliganNathaniel413Assignment4.Models.Restaurant
+
+<div class="text-center">
+    <h1 class="display-4">Add a New Restaurant</h1>
+</div>
+
+<form asp-action="AddRestaurant" method="post">
+    <div>
+        <label asp-for="SubmitterName">Your Name</label>
+        <input asp-for="SubmitterName" />
+    </div>
+    <div>
+        <label asp-for="Name">Restaurant Name</label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label asp-for="FavDish">Favorite Dish</label>
+        <input asp-for="FavDish" value="It's all tasty!" />
+    </div>
+    @*<div>
+            <label asp-for="Address">Address</label>
+            <input asp-for="Address" />
+        </div>*@
+    @Html.LabelFor(model => model.PhoneNum)
+    @Html.EditorFor(model => model.PhoneNum)
+    @Html.ValidationMessageFor(model => model.PhoneNum)
+    @*<div>
+        <label asp-for="PhoneNum">Phone Number:</label>
+        <input asp-for="PhoneNum" />
+    </div>*@
+    @*<div>
+            <label asp-for="Website">Website</label>
+            <input asp-for="Website"/>
+        </div>*@
+    <br />
+    @*Boostrap Button*@
+    <button class="btn btn-primary" type="submit">Submit</button>
+
+    <div asp-validation-summary="All"></div>
+</form>
